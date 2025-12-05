@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JISELY TECH Y ARQUITECTURA</title>
+  <meta name="description" content="Jisely Tech y Arquitectura - soluciones tecnológicas y diseño arquitectónico profesional." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent: #00bcd4;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
+      --max-width: 1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071023 0%, #0b1530 100%);
+      color:#e6eef6;
+      line-height:1.5;
+    }
+
+    /* Container */
+    .wrap{max-width:var(--max-width); margin:40px auto; padding:28px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; box-shadow: 0 10px 30px rgba(2,6,23,0.6);}
+
+    /* Header / Navbar */
+    header{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+    .brand{display:flex; align-items:center; gap:14px;}
+    .logo img{width:64px; height:64px; border-radius:12px; object-fit:cover; box-shadow: 0 6px 20px rgba(0,0,0,0.5);}
+    .brand h1{font-size:20px; margin:0;}
+    .brand p{margin:0; font-size:12px; color:var(--muted);}
+
+    nav{display:flex; gap:12px; align-items:center;}
+    nav a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px;}
+    nav a:hover{background:var(--glass); color:#fff;}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:center; margin-top:26px;}
+    .hero-left h2{font-size:34px; margin:0 0 8px;}
+    .hero-left p{color:var(--muted); margin:0 0 20px; max-width:68%;}
+    .cta{display:inline-block; padding:12px 18px; background:var(--accent); color:#002; font-weight:700; border-radius:12px; text-decoration:none;}
+    .hero-card{background:var(--glass); padding:0; border-radius:12px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.5);}
+    .hero-card img{width:100%; height:100%; object-fit:cover;}
+
+    section{margin-top:30px; padding:20px 0; border-top: 1px solid rgba(255,255,255,0.02);}
+    .grid-3{display:grid; grid-template-columns: repeat(3,1fr); gap:18px;}
+    .card{background:var(--card); padding:18px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.6);}
+    .card h3{margin:0 0 8px;}
+    .values-list{display:flex; flex-direction:column; gap:10px; color:var(--muted);}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns: repeat(3,1fr); gap:12px;}
+    .gallery img{width:100%; height:190px; object-fit:cover; border-radius:10px;}
+
+    /* Contact */
+    .contact-grid{display:grid; grid-template-columns: 1fr 380px; gap:18px;}
+    form input, form select, form textarea{
+      width:100%; padding:12px; border-radius:10px; background:transparent; 
+      color:inherit; border:1px solid rgba(255,255,255,0.05);
+    }
+    form button{padding:12px 16px; border-radius:10px; border:none; background:var(--accent); color:#002; font-weight:700;}
+
+    footer{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:28px; color:var(--muted); font-size:13px;}
+
+    /* Social floating */
+    .social-fixed{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:9999;
+    }
+    .sbtn{
+      width:52px; height:52px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--glass);
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+      text-decoration:none; color:inherit;
+      transition: transform .18s ease;
+      overflow:hidden;
+    }
+    .sbtn img{
+      width:100%; height:100%; object-fit:cover;
+    }
+    .sbtn:hover{transform:translateY(-6px);}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .hero-left p{max-width:100%;}
+      .gallery{grid-template-columns: repeat(2,1fr);}
+      .grid-3{grid-template-columns: 1fr;}
+      .contact-grid{grid-template-columns:1fr;}
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="logo2.png.jpg" alt="Logo Jisely Tech y Arquitectura">
+        </div>
+
+        <div>
+          <h1>JISELY TECH Y ARQUITECTURA</h1>
+          <p class="muted">Arquitectura moderna · Soluciones tecnológicas</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#mision">Misión</a>
+        <a href="#valores">Valores</a>
+        <a href="#modelos">Modelos</a>
+        <a href="#politica">Política</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-left">
+        <h2>Diseño arquitectónico + Tecnología moderna</h2>
+        <p>En Jisely Tech y Arquitectura combinamos creatividad, ingeniería y soluciones digitales avanzadas.</p>
+        <a class="cta" href="#contacto">Solicitar presupuesto</a>
+      </div>
+
+      <div class="hero-card">
+        <img src="bienvenido.png.jpg" alt="Imagen principal">
+      </div>
+    </section>
+
+    <!-- MISIÓN -->
+    <section id="mision">
+      <h3>Misión</h3>
+      <p class="muted">Brindar soluciones innovadoras de arquitectura y tecnología que eleven la calidad, estética y funcionalidad de cada proyecto.</p>
+    </section>
+
+    <!-- VALORES -->
+    <section id="valores">
+      <h3>Valores</h3>
+      <div class="grid-3">
+        <div class="card"><h3>Sostenibilidad</h3><p class="muted">Diseño responsable.</p></div>
+        <div class="card"><h3>Innovación</h3><p class="muted">Tecnología aplicada.</p></div>
+        <div class="card"><h3>Compromiso</h3><p class="muted">Calidad y puntualidad.</p></div>
+      </div>
+    </section>
+
+    <!-- MODELOS -->
+    <section id="modelos">
+      <h3>Modelos y Proyectos</h3>
+      <p class="muted">Sustituye estas imágenes por las tuyas:</p>
+
+      <div class="gallery">
+        <img src="4.png.jpg" alt="Modelo 1">
+        <img src="5.png.jpg" alt="Modelo 2">
+        <img src="8.png.jpg" alt="Modelo 3">
+      </div>
+    </section>
+
+    <!-- POLÍTICA -->
+    <section id="politica">
+      <h3>Política de la Empresa</h3>
+      <div class="card">
+        <p class="muted">
+          En <strong>Jisely Tech y Arquitectura</strong> nos comprometemos a ofrecer soluciones de diseño y tecnología con los más altos estándares de calidad, ética y responsabilidad profesional.
+        </p>
+        <ul class="muted" style="padding-left:20px;">
+          <li>Transparencia en todos los procesos.</li>
+          <li>Eficiencia y puntualidad.</li>
+          <li>Comunicación clara con cada cliente.</li>
+          <li>Cumplimiento normativo.</li>
+          <li>Innovación continua.</li>
+          <li>Satisfacción total del cliente.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JISELY TECH Y ARQUITECTURA</title>
+  <meta name="description" content="Jisely Tech y Arquitectura - soluciones tecnológicas y diseño arquitectónico profesional." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent: #00bcd4;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
+      --max-width: 1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui;
+      background: linear-gradient(180deg,#071023 0%, #0b1530 100%);
+      color:#e6eef6;
+      line-height:1.5;
+    }
+    .wrap{max-width:var(--max-width); margin:40px auto; padding:28px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; box-shadow: 0 10px 30px rgba(2,6,23,0.6);}    
+
+    header{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+    nav a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px;}
+    nav a:hover{background:var(--glass); color:#fff;}
+
+    /* CONTACTO — Mejorado estética */
+    #contacto h3{
+      font-size:24px;
+      margin-bottom:18px;
+      font-weight:700;
+    }
+
+    .contact-grid{
+      display:grid; grid-template-columns: 1fr 380px; gap:20px;
+    }
+
+    .contact-card{
+      background: var(--glass);
+      padding:22px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    form label{
+      font-weight:600;
+      margin-top:10px;
+      display:block;
+    }
+
+    form input, form select, form textarea{
+      width:100%; padding:12px; margin-top:6px;
+      border-radius:10px; background:rgba(255,255,255,0.03);
+      color:#fff; border:1px solid rgba(255,255,255,0.07);
+    }
+
+    form input:focus, form select:focus, form textarea:focus{
+      border-color:var(--accent);
+      outline:none;
+      background:rgba(255,255,255,0.06);
+    }
+
+    form button{
+      margin-top:16px;
+      width:100%; padding:14px;
+      border-radius:12px; border:none;
+      background:var(--accent); color:#002;
+      font-weight:700; font-size:16px;
+      cursor:pointer;
+      box-shadow:0 4px 14px rgba(0,188,212,0.3);
+    }
+
+    .info-card h4{
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .info-line{
+      background:#0f1a2d;
+      padding:10px 14px;
+      border-radius:10px;
+      margin-bottom:12px;
+      border-left:4px solid var(--accent);
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width:980px){ .contact-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <section id="contacto">
+      <h3>Contacto / Solicitar Presupuesto</h3>
+
+      <div class="contact-grid">
+
+        <!-- FORMULARIO ESTÉTICO -->
+        <div class="contact-card">
+          <form onsubmit="event.preventDefault(); alert('Formulario enviado (ejemplo).');">
+
+            <label>Nombre completo</label>
+            <input type="text" required>
+
+            <label>Correo electrónico</label>
+            <input type="email" required>
+
+            <label>Teléfono</label>
+            <input type="text" required>
+
+            <label>Tipo de servicio</label>
+            <select required>
+              <option value="">Seleccione...</option>
+              <option>Diseño arquitectónico</option>
+              <option>Modelado 3D</option>
+              <option>Renderización</option>
+              <option>Supervisión de obra</option>
+              <option>Instalación tecnológica</option>
+              <option>Otro</option>
+            </select>
+
+            <label>Presupuesto estimado</label>
+            <select required>
+              <option value="">Seleccione...</option>
+              <option>RD$10,000 - RD$50,000</option>
+              <option>RD$50,000 - RD$150,000</option>
+              <option>RD$150,000 - RD$300,000</option>
+              <option>RD$300,000+</option>
+            </select>
+
+            <label>Descripción detallada del proyecto</label>
+            <textarea rows="5" required></textarea>
+
+            <button type="submit">Enviar solicitud</button>
+          </form>
+        </div>
+
+        <!-- INFO ORDENADA Y ESTÉTICA -->
+        <div class="contact-card info-card">
+          <h4>Información</h4>
+          
+          <div class="info-line"><strong>Teléfono:</strong> +1 (829) 357-1503</div>
+          <div class="info-line"><strong>Correo:</strong> Jiselytech@gmail.com</div>
+          <div class="info-line"><strong>Horario:</strong><br>
+            Lunes a Viernes: 8:00 AM – 6:00 PM<br>
+            Sábados: 9:00 AM – 2:00 PM<br>
+            Domingos: Cerrado
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion">
+      <h3>Ubicación</h3>
+
+      <!-- Mapa -->
+      <iframe
+  width="100%"
+  height="380"
+  style="border-radius:12px; border:0;"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.0000000000005!2d-70.17095!3d18.673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea%3A0x0!2sCalle%2029%20de%20Abril%2C%20Villa%20Altagracia%2C%20San%20Cristóbal,%20República%20Dominicana!5e0!3m2!1ses!2sdo!4v1700000000000"
+></iframe>
+
+    </section>
+
+    <footer>
+      <div>© Jisely Tech y Arquitectura</div>
+      <div class="muted">Diseño & Desarrollo · Jisely Tech</div>
+    </footer>
+  </div>
+
+  <!-- Floating social -->
+  <div class="social-fixed">
+    <a class="sbtn" href="https://wa.me/18090000000">
+      <img src="whasa.png.jpg" alt="WhatsApp">
+    </a>
+    <a class="sbtn" href="#">
+      <img src="ing.png.jpg" alt="Instagram">
+    </a>
+    <a class="sbtn" href="#">
+      <img src="face.png.jpg" alt="Facebook">
+    </a>
+  </div>
+
+</body>
+</html>
